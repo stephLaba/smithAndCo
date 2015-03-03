@@ -1,0 +1,2 @@
+# smithAndCo
+Fashion Wordpress Theme
