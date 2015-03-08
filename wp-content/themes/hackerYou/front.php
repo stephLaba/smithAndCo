@@ -14,19 +14,26 @@ Template Name: front
 	<div class="gridWrapper clearfix">
 
 
-
+	<?php  
+	  $homepageArgs = array('post_type' => 'homepage');
+	  $homepageQuery = new WP_Query($homepageArgs);
+	  if($homepageQuery->have_posts()) while($homepageQuery->have_posts()) :
+	  $homepageQuery->the_post();
+	  $image = get_field('big_image');
+	?>
 
 		<header class="header">
 			<div class="band">
-				<h2>The Style of Saville Row in Downtown Toronto</h2>
+			<h2><?php the_field('big_header'); ?></h2>
 			</div>
 			<!-- .band end -->
 		</header>
 
+
 		<div class="a1 block doubleCol short">
 				<a href="/wp-smithAndCo/womens/" class="gridLink">
 				<div class="blockContent inset">
-					<h2 class="center">Sale</h2>
+					<h2 class="center"><?php the_field('cta_1'); ?></h2>
 				</div>
 				</a>
 		</div>
@@ -34,7 +41,7 @@ Template Name: front
 		<div class="block doubleCol short">
 			<div class="a2 blockContent">
 				<a href="/wp-smithAndCo/womens/" class=" gridLink">
-					<h2 class="center">Womens Wear</h2>
+					<h2 class="center"><?php the_field('cta_2'); ?></h2>
 				</a>
 			</div>
 		</div>
@@ -49,7 +56,7 @@ Template Name: front
 			<a href="" class="gridLink b1">
 				<div class="blockContent">
 					<h5 class="center">
-						instagram
+						<?php the_field('social_1'); ?>
 					</h5>
 				</div>
 			</a>
@@ -62,11 +69,11 @@ Template Name: front
 		   </div>
 	</div>
 
-	<div class="block doubleCol tall backgroundTwo largeImage">
+	<div class="block doubleCol tall backgroundTwo  largeImage">
 		<a href="/wp-smithAndCo/womens/" class="gridLink">
 			<div class="blockContent">
 				<h2 class="right buttonLink">
-					boots
+					<?php the_field('big_image_text'); ?>
 				</h2>
 			</div>
 		</a>
@@ -76,7 +83,7 @@ Template Name: front
 		<a href="/wp-smithAndCo/contact/" class="gridLink b3">
 			<div class="blockContent">
 				<h4 class="center">
-					news
+					<?php the_field('cta_3'); ?>
 				</h4>
 			</div>
 		</a>
@@ -86,7 +93,7 @@ Template Name: front
 		<a href="" class="gridLink a2 b4">
 			<div class="blockContent">
 				<h5 class="center">
-					Twitter
+					<?php the_field('social_2'); ?>
 				</h5>
 			</div>
 		</a>
@@ -96,7 +103,7 @@ Template Name: front
 		<a href="" class="gridLink a3 b5">
 			<div class="blockContent">
 				<h5 class="center">
-					Facebook
+					<?php the_field('social_3'); ?>
 				</h5>
 			</div>
 		</a>
@@ -105,6 +112,7 @@ Template Name: front
 	
 </div>
 
+	 <?php endwhile; ?>
 </div>
 <!-- .wrapper End -->
 

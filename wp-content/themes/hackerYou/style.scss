@@ -802,11 +802,11 @@ div.pc2{
   .a2{
     letter-spacing: 4px;
     background-color: #B2B2B2;
-    height: 280px;
+    height: 215px;
     transition:all ease-in 0.3s;
     -webkit-transition: all ease-in 0.3s;
     &:hover{
-      background-color: white;
+      background-color: #F9F9F9;
     }
   }
 
@@ -871,6 +871,11 @@ div.pc2{
   .d1 h2{
     font-weight: 200;
   }
+
+  img.homeBigImage{
+    width: 100%;
+
+    }
 
   /*form*/
 
@@ -938,7 +943,6 @@ div.pc2{
   }
 
   textarea{
-    width: 86%;
     margin-left: 57px;
     border:2px solid black;
 
@@ -973,6 +977,18 @@ div.pc2{
   a.contactButton{
     letter-spacing: 4px;
     font-size: 12px;
+  }
+
+  textarea, input{
+    width: 100%;
+  }
+
+  textarea{
+    margin-left: 0;
+  }
+
+  .inputWrap input{
+    margin-left: 0;
   }
 
   // ======================= form styles end ===================
@@ -1037,6 +1053,20 @@ div.pc2{
     a.seeMore {
       padding-bottom: 20px;
     }
+
+    textarea, input{
+      width: 100%;
+    }
+
+    textarea{
+      margin-left: 0;
+    }
+
+    .inputWrap input{
+      margin-left: 0;
+    }
+
+
     
    }
   
@@ -1129,11 +1159,6 @@ div.pc2{
       }
 
 
-      #menu-item-78{
-        // padding-right: 40px;
-        // padding-top: 30px;
-        // padding-bottom: 30px;
-      }
 
       // ================ nav end =================
 
@@ -1146,10 +1171,22 @@ div.pc2{
       }
 
 
-      // div.saleOptImg{
-      //   // margin: 0;
-      //   margin-top: 20px;
-      // }
+     form h3 {
+       margin-top: 30px;
+     }
+
+     .inputWrap input{
+      width: 100%;
+      margin-left: 0;
+     }
+
+     input{
+      width: 100%;
+     }
+
+     .fernBkg{
+      margin-top: 50px;
+     }
 
 
   }
@@ -1198,7 +1235,14 @@ div.pc2{
       font-size: 25px;
     }
 
+    .form h3{
+      margin-top: 20px;
+    }
 
+    div.form {
+      padding: 2%;
+
+    }
     
   }
 

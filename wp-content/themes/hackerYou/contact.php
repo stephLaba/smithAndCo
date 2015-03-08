@@ -8,6 +8,13 @@ Template Name: contact
 
     <div class="gridWrapper clearfix">
 
+    <?php  
+      $contactArgs = array('post_type' => 'contact');
+      $contactQuery = new WP_Query($contactArgs);
+      if($contactQuery->have_posts()) while($contactQuery->have_posts()) :
+      $contactQuery->the_post();
+      // $image = get_field('product_gallery_thumbnail');
+    ?>
 
     <div class="block singleCol tall">
       <div class="block short full">
@@ -17,15 +24,15 @@ Template Name: contact
               hours
             </h6>
             <p>
-              monday-Saturday
+              <?php the_field('hours_days'); ?>
               <br>
-              11am- 7pm
+              <?php the_field('hours_time'); ?>
             </p>
             <h6>
               Phone
             </h6>
             <p>
-              416 555 5555
+             <?php the_field('phone_number'); ?>
             </p>
           </div>
         </div>
@@ -64,7 +71,7 @@ Template Name: contact
       </div>
     </div>
 
-    <div class="block doubleCol short backgroundOne">
+    <div class="block doubleCol short fernBkg backgroundOne">
       <div class="blockContent">
       </div>
     </div>
@@ -88,19 +95,22 @@ Template Name: contact
     <div class="block doubleCol short d1">
       <div class="blockContent ">
       <h2 class="center">
-      1140 QUEEN ST.W
+      <?php the_field('address'); ?>
       </h2>
       </div>
     </div>
 
-    <div class="block doubleCol short">
+
+
+
+    <div class="block doubleCol hide short">
       <div class="blockContent">
     <!--  <h2 class="center">map</h2> -->
       <div  id="map"></div>
       </div>
     </div>
 
-      <div class="block singleCol short backgroundFive yay">
+      <div class="block singleCol short hide backgroundFive yay">
       <div class="blockContent">
       <!--  <h4 class="center">
           img
@@ -109,6 +119,7 @@ Template Name: contact
     </div>
     </div>
     <!-- end .wrapper -->
+   <?php endwhile; ?>
 
 <!-- </div> --> <!-- /.main -->
 
